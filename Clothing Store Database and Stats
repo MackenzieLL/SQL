@@ -1,0 +1,39 @@
+--Create a clothing store's inventory database.
+
+CREATE TABLE Inventory (id INTEGER PRIMARY KEY, Product TEXT, Type TEXT, Price REAL, Quantity INTEGER);
+
+INSERT INTO Inventory VALUES
+(1, "Pink Blouse", "Top", 25.99, 5),
+(2, "Blue Blouse", "Top", 25.99, 5),
+(3, "White Blouse", "Top", 25.99, 5),
+(4, "Pink Dress", "Top", 45.99, 3),
+(5, "Blue Dress", "Top", 45.99, 3),
+(6, "Floral Dress", "Top", 55.99, 2),
+(7, "Frill Socks", "Bottom", 5.99, 5),
+(8, "Black Loafers", "Bottom", 69.99, 3),
+(9, "Brown Loafers", "Bottom", 69.99, 3),
+(10, "White Pearl Headband", "Accessory", 10.99, 5),
+(11, "Pink Peal Headband", "Accessory", 10.99, 5),
+(12, "Silver Heart Necklace", "Accessory", 15.99, 3),
+(13, "Gold Heart Necklace", "Accessory", 15.99, 3),
+(14, "Assorted Hair Scrunchies", "Accessory", 7.99, 10),
+(15, "Stacking Rings", "Accessory", 9.99, 2);
+
+--Display the database ordered by prices ascending.
+
+SELECT * FROM Store ORDER BY Price ASC;
+
+--Display the database where items are greater than or equal to 15.99 in price ordered by prices ascending.
+
+SELECT * FROM Store WHERE Price >= 15.99 ORDER BY Price ASC;
+
+--What is the average price of items of the Accessory type?
+SELECT AVG(Price) "Aveage Accessory Product Price"
+FROM Inventory
+where selection-"Accessory";
+
+--Which 5 items have the largest quantity of inventory?
+SELECT Product, Price, Quantity
+FROM Inventory
+order by Quantity desc
+limit 5;
